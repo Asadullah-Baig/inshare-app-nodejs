@@ -2,15 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
-
-const PORT = process.env.PORT || 3000;
-
-app.use(express.static("public"));
-
-app.use(express.json());
-
-const connectDB = require("./config/db");
-
 //Cors
 
 const corsOptions = {
@@ -19,6 +10,14 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static("public"));
+
+app.use(express.json());
+
+const connectDB = require("./config/db");
 
 //Template Engine
 app.set("views", path.join(__dirname, "/views"));
