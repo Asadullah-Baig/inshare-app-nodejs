@@ -5,8 +5,8 @@ const cors = require("cors");
 //Cors
 
 const corsOptions = {
-  // origin: ["http://localhost:3000", "https://inshare-app-asad.herokuapp.com"],
-  origin: process.env.ALLOWED_CLIENTS.split(","),
+   origin: ["http://localhost:3000", "https://inshare-app-asad.herokuapp.com"],
+  // origin: process.env.ALLOWED_CLIENTS.split(","),
 };
 
 app.use(cors(corsOptions));
